@@ -101,7 +101,7 @@ public class AddressDao {
 		
 		//Class.forName(driverClass);
 				//Connection con = DriverManager.getConnection(url, user, password);
-				Connection con = ConnectionFactory.getConnection();
+		Connection con = ConnectionFactory.getConnection();
 		PreparedStatement pstmt=con.prepareStatement(AddressSQL.SELECTALL);
 		ResultSet rs=pstmt.executeQuery();
 		while(rs.next()) {
