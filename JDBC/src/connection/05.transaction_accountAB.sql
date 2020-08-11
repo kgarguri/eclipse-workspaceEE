@@ -41,7 +41,8 @@ desc accounta;
 
 --commit;
 --rollback;
-
+select * from dept;
+desc dept;
 
 
 
