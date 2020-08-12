@@ -20,7 +20,7 @@ public class HelloServlet extends HttpServlet{
 		/*
 		 *  2-1 응답헤더 ContentType 설정
 		 */
-		response.setContentType("text/plain:charset=UTF=8");
+		response.setContentType("text/html:charset=UTF=8");
 		/*
 		 *  2-2 클라이언트(웹브러우저) 로 전송할 스트림 생성 \]
 		 */
@@ -29,7 +29,7 @@ public class HelloServlet extends HttpServlet{
 			/*
 			 *  2-3 클라이언트(웹브러우저) 로 데이타 출력
 			 */
-			out.println("hellowServlet5[text]!!!");
+			out.println("<h3>hellowServlet"+(i+1)+"[text]!!!</h3><hr>");
 		}
 	}
 
