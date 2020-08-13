@@ -47,6 +47,12 @@ public class joinServlet extends HttpServlet {
 		String job = request.getParameter("job");
 		String[] hobbies = request.getParameterValues("hobby");
 		
+		String sex;
+		if (gender.equals("M")) {
+			sex = "남";
+		} else {
+			sex = "여";
+		}
 		/*
 		 * service 메쏘드 호출
 		 */
@@ -54,17 +60,35 @@ public class joinServlet extends HttpServlet {
 		/*
 		 * 3. 클라이안트 결과 전송
 		 */
-		
+		/*
 		out.println("<ul>");
 		out.println("<li>아이디:"+id+"</li>");
 		out.println("<li>이름:"+name+"</li>");
 		out.println("<li>주소:"+addr+"</li>");
-		out.println("<li>성별:"+gender+"</li>");
+		out.println("<li>성별:"+sex+"</li>");
 		out.println("<li>직업:"+job+"</li>");
 		for (int i = 0; i < hobbies.length; i++) {
 			out.println("<li>취미:"+hobbies[i]+"</li>");
 		}
 		out.println("</ul>");
+		*/
+
+		
+		out.println("<BODY>");
+		out.println("<table border=1 align=center>");
+		out.println("<tr><td colspan=2>"+id+"님 가입정보</td></tr>");
+		out.println("<tr><td>항목</td><td>값</td></tr>");
+		out.println("<tr><td>아이디</td><td>"+id+"</td></tr>");
+		out.println("<tr><td>이름</td><td>"+name+"</td></tr>");
+		out.println("<tr><td>주소</td><td>"+addr+"</td></tr>");
+		out.println("<tr><td>성별</td><td>"+sex+"</td></tr>");
+		out.println("<tr><td>직업</td><td>"+job+"</td></tr>");
+		out.println("<tr><td rowspan="+hobbies.length+">취미</td>");
+		for (int i = 0; i < hobbies.length; i++) {
+			out.println("<td>"+hobbies[i]+"</td></tr>");
+		}
+		out.println("</table>");
+
 		
 	}
 
