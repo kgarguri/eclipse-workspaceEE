@@ -21,7 +21,7 @@ public class searchServlet extends HttpServlet {
 		 */
 		/*******************************************
 		  1.요청시에 전송되는 파라메타 받기
-		     - 파라메타이름은 input element의 name속성과일치
+		     - 파라메타이름은 input element의 name속성과 일치
 		      	<input type="text" name="searchword">
 		     - search.do?searchword=java
 		    
