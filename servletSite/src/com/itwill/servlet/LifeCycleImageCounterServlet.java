@@ -60,7 +60,8 @@ public class LifeCycleImageCounterServlet extends HttpServlet {
 		
 		count++;
 
-		String countStr= Integer.toString(count);
+		String countStr= Integer.toString(count);  // == String countStr1 = count+""; 
+		
 
 		out.println("현재까지의 페이지뷰수[요청횟수]");
 		for (int i = 0; i < countStr.length(); i++) {
