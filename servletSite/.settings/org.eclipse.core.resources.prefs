@@ -1,4 +1,8 @@
 eclipse.preferences.version=1
+encoding//WebContent/address_detail.html=UTF-8
+encoding//WebContent/address_insert_form.html=UTF-8
+encoding//WebContent/address_list.html=UTF-8
+encoding//WebContent/address_update_form.html=UTF-8
 encoding//WebContent/html2/02.head.html=UTF-8
 encoding//WebContent/html2/03.div.html=UTF-8
 encoding//WebContent/html2/04.p.html=UTF-8

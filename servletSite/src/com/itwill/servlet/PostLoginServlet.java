@@ -24,11 +24,16 @@ public class PostLoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
+	
+		/*
 		System.out.println("요청방식(method):"+request.getMethod());
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out=response.getWriter();
 		out.println("<h1>잘못된 요청방식입니다.</h1><hr>");
 		out.println("<a href='05-02.login_post.html'>로그인폼[POST]</a>");
+		*/
+		response.sendRedirect("05-02.login_post.html");
+		
 	}	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("요청방식(method):"+request.getMethod());
@@ -69,8 +74,12 @@ public class PostLoginServlet extends HttpServlet {
 		out.println("<h1>POST 로그인결과</h1><hr>");
 		if(isMember1 || isMember2) {
 			//로그인성공
+			/*
 			out.println("<h3>"+id+" 님 로그인성공<h3><hr>");
 			out.println("<a href='index.html'>메인으로</a>");
+			*/
+			//response.sendRedirect("05-02.login_post.html");
+			response.sendRedirect("index.html");
 		}else {
 			//로그인실패
 			out.println("<h3>"+id+" 님 로그인실퐤<h3><hr>");
