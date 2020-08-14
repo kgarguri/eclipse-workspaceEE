@@ -6,7 +6,7 @@ public class AddressSQL {
 	public static final String UPDATE=
 			"update address set id=?,name=?,phone=?,address=? where no=?";
 	public static final String SELECTBYNO="select * from address where no=?";
-	public static final String SELECTALL="select * from address";
+	public static final String SELECTALL="select * from address order by 1";
 					
 				
 }

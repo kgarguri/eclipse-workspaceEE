@@ -43,6 +43,7 @@ public class jdbcservlet1 extends HttpServlet {
 			out.println("<td align=center height=20 width=25%><font color=#FFFFFF>전화번호</font></td>");
 			out.println("<td align=center height=20 width=50%><font color=#FFFFFF>주소</font></td>");
 			out.println("</tr>");
+			
 			while (rs.next()) {
 				out.println("<tr class=t1>");
 				out.println("<td align=center width=25% height=20>"+rs.getString("name")+"</td>");
