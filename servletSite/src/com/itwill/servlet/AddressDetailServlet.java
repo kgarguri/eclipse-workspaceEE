@@ -20,6 +20,7 @@ public class AddressDetailServlet extends HttpServlet {
 	
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		try {
 		response.setContentType("text/html;charset=UTF-8");
 		PrintWriter out=response.getWriter();
 		/*
@@ -31,11 +32,13 @@ public class AddressDetailServlet extends HttpServlet {
 		 * 5.보여주기
 		 */
 		
-		try {
 		String no = request.getParameter("no");
+		if(no == null || no.equals("")) {
+			response.sendRedirect("address_main.html");
+			return;
+		}
 		AddressService addressService = new AddressService();
 		Address findAddress = addressService.selectByNo(Integer.parseInt(no));
-		
 		out.println("<!DOCTYPE html>");
 		out.println("<html>");
 		out.println("<head>");
@@ -45,9 +48,9 @@ public class AddressDetailServlet extends HttpServlet {
 		out.println("<body>");
 		out.println("<h1>["+findAddress.getName()+"님 주소록상세보기]</h1><hr>");
 		out.println("<div>");
-		out.println("	<a href='address_delete.do?no="+findAddress.getNo()+"'>"+findAddress.getName()+"님삭제[GET]</a>");
+		out.println("	<a href='address_delete.action_do?no="+findAddress.getNo()+"'>"+findAddress.getName()+"님삭제[GET]</a>");
 		out.println("	<a href='address_update_form.do'>["+findAddress.getName()+"님 주소록수정폼]</a>");
-		out.println("	<a href='address_insert_action.do'>[주소록쓰기폼]</a>");
+		out.println("	<a href='address_insert_form.html'>[주소록쓰기폼]</a>");
 		out.println("	<a href='address_list.do'>[주소록리스트]</a>");
 		out.println("</div>");
 		out.println("<p>");
@@ -63,6 +66,7 @@ public class AddressDetailServlet extends HttpServlet {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			response.sendRedirect("address_error.html");
 		}
 	}
 

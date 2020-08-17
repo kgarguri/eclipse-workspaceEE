@@ -21,12 +21,11 @@ public class AddressListServlet extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
+
+		try {
 		PrintWriter out=response.getWriter();
-		
 		AddressService addressService = new AddressService();
 		ArrayList<Address> addressList;
-		try {
-		
 			addressList = addressService.selectAll();
 			out.println("<!DOCTYPE html>");
 			out.println("<html>");
@@ -37,7 +36,7 @@ public class AddressListServlet extends HttpServlet {
 			out.println("<body>");
 			out.println("<h1>[주소록리스트]</h1><hr>");
 			out.println("<div>");
-			out.println("	<a href=''>[주소록쓰기]</a>");
+			out.println("	<a href=''>[주소록쓰기폼]</a>");
 			out.println("</div>");
 			out.println("<div>");
 			out.println("	<ul>");
@@ -53,13 +52,10 @@ public class AddressListServlet extends HttpServlet {
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+				response.sendRedirect("address_error.html");
 			}		
 
-		
-		
-		
-		
-		
+
 	}
 
 }
