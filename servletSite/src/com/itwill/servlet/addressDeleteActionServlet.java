@@ -23,11 +23,16 @@ public class addressDeleteActionServlet extends HttpServlet {
 		 * 3.파라메타데이타로 Addess객체생성
 		 * 4.AddressService.delete()메쏘드실행
 		 * 5.adress_list.do로 redirection
+		 * 	요청URL==>  http://192.168.15.31/servletSite/address_delete_action.do?no=1
 		 */
 
 		try {
 		request.setCharacterEncoding("UTF-8");
 		String no = request.getParameter("no");
+		if(no==null|| no.equals("")) {
+			response.sendRedirect("address_main.html");
+			return;
+		}
 		AddressService addressServoce = new AddressService();
 		int deleteCount = addressServoce.delete(Integer.parseInt(no));
 		} catch (Exception e) {
@@ -35,15 +40,4 @@ public class addressDeleteActionServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
-
 }

@@ -49,7 +49,7 @@ public class AddressDetailServlet extends HttpServlet {
 		out.println("<h1>["+findAddress.getName()+"님 주소록상세보기]</h1><hr>");
 		out.println("<div>");
 		out.println("	<a href='address_delete.action_do?no="+findAddress.getNo()+"'>"+findAddress.getName()+"님삭제[GET]</a>");
-		out.println("	<a href='address_update_form.do'>["+findAddress.getName()+"님 주소록수정폼]</a>");
+		out.println("	<a href='address_update_form.do?no="+findAddress.getNo()+"'>["+findAddress.getName()+"님 주소록수정폼]</a>");
 		out.println("	<a href='address_insert_form.html'>[주소록쓰기폼]</a>");
 		out.println("	<a href='address_list.do'>[주소록리스트]</a>");
 		out.println("</div>");
