@@ -18,7 +18,7 @@ public class addressUpdateActionServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("address_main.html");
+		response.sendRedirect("address_main.do");
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,6 +49,7 @@ public class addressUpdateActionServlet extends HttpServlet {
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
+			System.out.println("22222222222222222222");
 			response.sendRedirect("address_error.html");
 		}
 		
