@@ -20,20 +20,34 @@ public class GuestDaoImpl implements GuestDao{
 	}
 
 	@Override
-	public Guest selectByNo(int no) {
-		// TODO Auto-generated method stub
-		return null;
+	public Guest selectByNo(int no) throws Exception {
+		Guest findGuest = new Guest();
+		
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(GuestSQL.GUEST_SELECT_NO);
+		pstmt.setInt(1, no);
+		ResultSet rs = pstmt.executeQuery();
+		
+		while (rs.next()) {
+			findGuest = new Guest(rs.getInt("guest_no"), rs.getString("guest_name"),
+					              rs.getNString("guest_date"), rs.getString("guest_email"),
+					              rs.getString("guest_homepage"), rs.getString("guest_title"), rs.getString("guest_content"));
+		}
+		rs.close();
+		pstmt.close();
+		ConnectionFactory.releaseConnection(con);
+		return findGuest;
 	}
 	/*
-이름             널?       유형             
--------------- -------- -------------- 
-GUEST_NO       NOT NULL NUMBER(10)     
-GUEST_NAME     NOT NULL VARCHAR2(100)  
-GUEST_DATE     NOT NULL DATE           
-GUEST_EMAIL             VARCHAR2(100)  
-GUEST_HOMEPAGE          VARCHAR2(100)  
-GUEST_TITLE    NOT NULL VARCHAR2(255)  
-GUEST_CONTENT  NOT NULL VARCHAR2(4000) 
+		이름             널?       유형             
+		-------------- -------- -------------- 
+		GUEST_NO       NOT NULL NUMBER(10)     
+		GUEST_NAME     NOT NULL VARCHAR2(100)  
+		GUEST_DATE     NOT NULL DATE           
+		GUEST_EMAIL             VARCHAR2(100)  
+		GUEST_HOMEPAGE          VARCHAR2(100)  
+		GUEST_TITLE    NOT NULL VARCHAR2(255)  
+		GUEST_CONTENT  NOT NULL VARCHAR2(4000) 
 	 */
 	@Override
 	public ArrayList<Guest> selectAll() throws Exception {

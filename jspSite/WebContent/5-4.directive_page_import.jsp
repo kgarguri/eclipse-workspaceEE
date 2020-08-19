@@ -1,4 +1,4 @@
-<%@page import="com.itwill.address.AddressSevice"%>
+<%@page import="com.itwill.address.AddressService"%>
 <%@page import="com.itwill.address.Address"%>
 <%@page import="com.itwill.address.AddressDaoImpl"%>
 <%@page import="com.itwill.address.AddressDao"%>
@@ -15,8 +15,7 @@
 	HashMap map=new HashMap();
 	AddressDao addressDao=new AddressDaoImpl();
 	Address address=new Address();
-	AddressSevice addressSevice=new AddressSevice();
-	
+	AddressService addressSevice=new AddressService();
 %>	
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>

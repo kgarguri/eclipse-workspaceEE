@@ -17,7 +17,7 @@ public class GuestService {
 	 * Read
 	 */
 	public Guest selectByNo(int no) throws Exception{
-		return null;
+		return guestDao.selectByNo(no);
 	}
 	public ArrayList<Guest> selectAll() throws Exception{
 		return guestDao.selectAll();

@@ -4,11 +4,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-	String no = request.getParameter("no");
 	GuestService guestService=new GuestService();
-	Guest findGuest = guestService.selectByNo(Integer.parseInt(no));
+	Guest findGuest = new Guest(); 
+	String no = request.getParameter("no");
+	System.out.println(no);
 %>  
-   
+<%	findGuest = guestService.selectByNo(Integer.parseInt(no));
+%>  
 <%
 /*
 요청URL-->

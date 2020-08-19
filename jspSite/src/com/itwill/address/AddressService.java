@@ -2,9 +2,9 @@ package com.itwill.address;
 
 import java.util.ArrayList;
 
-public class AddressSevice {
+public class AddressService {
 	private AddressDao addressDao;
-	public AddressSevice() {
+	public AddressService() {
 		addressDao=new AddressDaoImpl();
 	}
 	public int create(Address insertAddress) throws Exception{

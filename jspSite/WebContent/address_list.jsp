@@ -1,5 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@page import="com.itwill.address.Address"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.itwill.address.AddressService"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+	AddressService addressService=new AddressService();
+	ArrayList<Address> addressList=addressService.selectAll();
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,9 +19,9 @@
 </div>
 <div>
 	<ul>
-		<li><a href='address_detail.jsp?no=1'>1 KIM</a></li>
-		<li><a href='address_detail.jsp?no=14'>14 LEE</a></li>
-		<li><a href='address_detail.jsp?no=45'>45 HONG</a></li>
+		<%for(Address address:addressList){ %>
+			<li><a href='address_detail.jsp?no=<%=address.getNo()%>'><%=address.getNo() %><%=address.getId()%></a></li>
+		<%}%>
 		
 	</ul>
 </div>

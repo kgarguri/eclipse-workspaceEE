@@ -1,5 +1,13 @@
+<%@page import="com.itwill.address.Address"%>
+<%@page import="com.itwill.address.AddressService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+	String noStr=request.getParameter("no");
+	AddressService addressSevice=new AddressService();
+	Address address= addressSevice.selectByNo(Integer.parseInt(noStr));
+%> 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,11 +23,11 @@
 	<a href='address_list.jsp'>[주소록리스트]</a>
 </div>
 <p>
-	번호:1<br>
-	아이디:guard<br>
-	이름:김경호<br>
-	전화:123-4568<br>
-	주소:경기도 성남시<br>
+	번호:<%=address.getNo() %><br>
+	아이디:<%=address.getId() %><br>
+	이름:<%=address.getName() %><br>
+	전화:<%=address.getPhone() %><br>
+	주소:<%=address.getAddress() %><br>
 </p>
 </body>
 </html>
