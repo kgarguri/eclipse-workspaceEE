@@ -22,7 +22,7 @@
 </head>
 <body>
 <h1>SCOPE객체2</h1>
-
+<hr>
 <ol>
 	<li>page:<%=pageContext.getAttribute("pageSt")%></li>
 	<li>request:<%=request.getAttribute("requestSt")%></li>
@@ -30,7 +30,7 @@
 	<li>application:<%=application.getAttribute("applicationSt")%></li>
 </ol> 
 <br/>
-<a href='8-1.default_scope.jsp'>8-1.default_scope.jsp</a><br/>
+<a href='8-1.default_scope_page_session_application1.jsp'>8-1.default_scope_page_session_application1.jsp</a><br/>
 
 </body>
 </html>

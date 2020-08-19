@@ -22,8 +22,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>SCOPE request媛�泥�</h1>
-
+<h1>SCOPE request객체</h1>
+<hr>
 <ol>
 	<li>page:<%=pageContext.getAttribute("pageSt")%></li>
 	<li>request:<%=request.getAttribute("requestSt")%></li>

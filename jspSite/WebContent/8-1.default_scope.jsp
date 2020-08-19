@@ -23,7 +23,7 @@
 </head>
 <body>
 <h1>SCOPE객체</h1>
-
+<hr>
 <ol>
 	<li>page:<%=pageContext.getAttribute("pageSt")%></li>
 	<li>request:<%=request.getAttribute("requestSt")%></li>
@@ -36,7 +36,7 @@ include
 <jsp:include page="8-1.default_scope_request.jsp"></jsp:include>
 <hr/>
 include
-<a href='8-1.default_scope_page_session_application.jsp'>8-1.default_scope_page_session_application.jsp</a><br/>
+<a href='8-1.default_scope_page_session_application1.jsp'>8-1.default_scope_page_session_application1.jsp</a><br/>
 
 </body>
 </html>

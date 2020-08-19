@@ -8,7 +8,7 @@
 <BODY>
 	<center>
 		<H2>JSP 잘났어 정말 별꼴이야!!!!!!!!!</H2>
-		<center>
+		
 			<img src='tomcat.gif' />
 			<center>
 				<H2>JSP구구단</H2>
@@ -45,5 +45,9 @@
 				<%} %>
 			</table>
 			<br/>
+			<br/>
+			<br/>
+			</center>
+			<%@ include file="5-6.directive_included_file.jspf" %>
 </BODY>
 </HTML>
