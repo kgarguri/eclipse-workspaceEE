@@ -24,6 +24,17 @@ public class Guest {
 		this.guest_title = guest_title;
 		this.guest_content = guest_content;
 	}
+	public Guest(String guest_name, String guest_email, String guest_homepage,
+			String guest_title, String guest_content) {
+		this.guest_name = guest_name;
+		this.guest_email = guest_email;
+		this.guest_homepage = guest_homepage;
+		this.guest_title = guest_title;
+		this.guest_content = guest_content;
+	}	
+	
+	
+	
 	public int getGuest_no() {
 		return guest_no;
 	}
@@ -68,9 +79,8 @@ public class Guest {
 	}
 	@Override
 	public String toString() {
-		return "Guest [guest_no=" + guest_no + ", guest_name=" + guest_name + ", guest_date=" + guest_date
-				+ ", guest_email=" + guest_email + ", guest_homepage=" + guest_homepage + ", guest_title=" + guest_title
-				+ ", guest_content=" + guest_content + "]";
+		return "Guest [guest_name=" + guest_name + ", guest_email=" + guest_email + ", guest_homepage=" + guest_homepage
+				+ ", guest_title=" + guest_title + ", guest_content=" + guest_content + "]";
 	}
 	
 	

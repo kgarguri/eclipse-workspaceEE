@@ -11,7 +11,7 @@ public class GuestService {
 	 * Create
 	 */
 	public int insertGuest(Guest guest) throws Exception{
-		return 0;
+		return guestDao.insertGuest(guest);
 	}
 	/*
 	 * Read

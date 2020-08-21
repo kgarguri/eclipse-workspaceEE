@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%
 	/*
-	1.파라메타바끼
+	1.파라메타바끼  guest_no
 	2.GuestService.selectByNo()메쏘드호출
 	3.Guest를 보여준다
 	*/

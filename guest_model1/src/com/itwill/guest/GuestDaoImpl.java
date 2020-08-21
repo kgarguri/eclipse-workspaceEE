@@ -6,6 +6,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
+import javafx.css.PseudoClass;
+
 
 
 public class GuestDaoImpl implements GuestDao{
@@ -15,8 +17,18 @@ public class GuestDaoImpl implements GuestDao{
 	}
 	@Override
 	public int insertGuest(Guest guest) throws Exception {
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(GuestSQL.GUEST_INSERT);
+		pstmt.setString(1, guest.getGuest_name());
+		pstmt.setString(2, guest.getGuest_email());
+		pstmt.setString(3, guest.getGuest_homepage());
+		pstmt.setString(4, guest.getGuest_title());
+		pstmt.setString(5, guest.getGuest_content());
+		int insertRowcount = pstmt.executeUpdate();
+		pstmt.close();
+		ConnectionFactory.releaseConnection(con);
 		
-		return 0;
+		return insertRowcount;
 	}
 
 	@Override

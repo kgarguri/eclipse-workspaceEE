@@ -1,29 +1,48 @@
+<%@page import="javax.swing.text.AbstractDocument.Content"%>
+<%@page import="com.itwill.guest.GuestSQL"%>
+<%@page import="com.itwill.guest.GuestDao"%>
+<%@page import="com.sun.javafx.scene.traversal.Hueristic2D"%>
+<%@page import="com.itwill.guest.Guest"%>
+<%@page import="com.itwill.guest.GuestService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <title>방명록 관리</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
-
-
-
-
-
 <link rel="stylesheet"
 	href="css/styles.css">
 <link rel="stylesheet"
 	href="css/guest.css">
-
-
-
-
-
-
+ 
 <script	src="js/guest.js"></script>
+
+<script type="text/javascript">
+	function guestWriteAction(){
+		if(document.f.guest_name.value==''){
+			alert('이름을 입력하세요');
+			document.f.guest_name.focus();
+			return;
+		}
+		
+		document.f.action='guest_write_action.jsp';
+		document.f.method='POST';
+		document.f.submit();
+	}
+	
+	//var f = document.getElementById('f');
+	var name = document.f.guest_name.value;
+	var email = document.f.guest_email.value;
+	var homepage = document.f.guest_homepage.value;
+	var title = document.f.guest_title.value;
+	var content = document.f.guest_content.value;
+	
+<%    GuestService guestService = new GuestService();
+	int cnt = guestService.insertGuest(new Guest(String name, String email, String homepage, String title, String content));
+%>
+
+</script>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
@@ -96,9 +115,9 @@
 				</form> <br />
 				<table width=590 border=0 cellpadding=0 cellspacing=0>
 					<tr>
-						<td align=center><input type="button" value="방명록쓰기"
-							onClick="guestCreate();"> &nbsp; <input type="button"
-							value="방명록목록" onClick="guestList()"></td>
+						<td align=center>
+						<input type="button" value="방명록쓰기" onclick="guestWriteAction()"> &nbsp; 
+						<input type="button" value="방명록목록" onclick="guestList()"></td>
 					</tr>
 				</table>
 			</td>

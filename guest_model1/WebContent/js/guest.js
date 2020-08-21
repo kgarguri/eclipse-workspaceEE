@@ -1,33 +1,34 @@
-/**
- * 
- */
-
-function guestCreateForm() {
-	document.f.action = 'guest_write.jsp';
+function guestWriteForm() {
+	document.f.action = 'guest_write_form.jsp';
+	document.f.method = 'POST';
 	document.f.submit();
 }
 function guestModifyAction() {
-	f.action = "guest_modify_action.jsp";
-	f.submit();
+	document.f.action = "guest_modify_action.jsp";
+	document.f.method='POST';
+	document.f.submit();
 }
 
 function guestList() {
-	f.action = "guest_list.jsp";
-	f.submit();
+	document.f.action = "guest_list.jsp";
+	document.f.method='POST';
+	document.f.submit();
 }
 
-function guestModify() {
-	f.action = "guest_modify.jsp";
-	f.submit();
+function guestModifyForm() {
+	document.f.action = "guest_modify_form.jsp";
+	document.f.method='POST';
+	document.f.submit();
 }
-function guestRemove() {
+function guestRemoveAction() {
 	if (window.confirm("정말 삭제하시겠습니까?")) {
-		f.action = "guest_remove_action.jsp";
-		f.submit();
+		document.f.action = "guest_remove_action.jsp";
+		document.f.method='POST';
+		document.f.submit();
 	}
 }
-function guestCreate() {
-	if (f.guest_name.value == "") {
+function guestWriteAction() {
+	if (document.f.guest_name.value == "") {
 		alert("이름을 입력하십시요.");
 		f.guest_name.focus();
 		return false;
@@ -54,6 +55,7 @@ function guestCreate() {
 		return false;
 	}
 
-	f.action = "guest_write_action.jsp";
-	f.submit();
+	document.f.action = "guest_write_action.jsp";
+	document.f.method='POST';
+	document.f.submit();
 }
