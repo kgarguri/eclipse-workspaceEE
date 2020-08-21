@@ -6,6 +6,11 @@
 <%@page import="com.itwill.guest.GuestService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%    
+    GuestService guestService = new GuestService();
+	//Guest guest = new Guest();
+	//guestService.insertGuest(new Guest(String name, String email, String homepage, String title, String content));
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -37,12 +42,10 @@
 	var homepage = document.f.guest_homepage.value;
 	var title = document.f.guest_title.value;
 	var content = document.f.guest_content.value;
-	
-<%    GuestService guestService = new GuestService();
-	int cnt = guestService.insertGuest(new Guest(String name, String email, String homepage, String title, String content));
-%>
+</script>	
 
-</script>
+
+
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
