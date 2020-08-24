@@ -4,9 +4,6 @@
 		response.sendRedirect("7-2.default_session_login_form.jsp");
 		return;
 	}
-
-	
-	
 	/*
 		id   : user1,user2
 		pass : 1111 ,2222

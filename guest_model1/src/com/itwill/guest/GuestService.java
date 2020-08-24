@@ -26,12 +26,12 @@ public class GuestService {
 	 * Update
 	 */
 	public int updateGuest(Guest guest) throws Exception{
-		return 0;
+		return guestDao.updateGuest(guest);
 	}
 	/*
 	 * Delete
 	 */
 	public int deleteGuest(int no) throws Exception{
-		return 0;
+		return guestDao.deleteGuest(no);
 	}
 }

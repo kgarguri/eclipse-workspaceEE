@@ -86,14 +86,36 @@ public class GuestDaoImpl implements GuestDao{
 
 	@Override
 	public int updateGuest(Guest guest) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(GuestSQL.GUEST_UPDATE);
+		System.out.println("name :"+guest.getGuest_name());
+		System.out.println("email :"+guest.getGuest_email());
+		System.out.println("homepage :"+guest.getGuest_homepage());
+		System.out.println("title :"+guest.getGuest_title());
+		System.out.println("content :"+guest.getGuest_content());
+		System.out.println("no :"+guest.getGuest_no());
+		
+		
+		
+		pstmt.setString(1, guest.getGuest_name());
+		pstmt.setString(2, guest.getGuest_email());
+		pstmt.setString(3, guest.getGuest_homepage());
+		pstmt.setString(4, guest.getGuest_title());
+		pstmt.setString(5, guest.getGuest_content());
+		pstmt.setInt(6, guest.getGuest_no());
+		int update_cnt = pstmt.executeUpdate();
+		return update_cnt;
 	}
 
 	@Override
 	public int deleteGuest(int no) throws Exception {
-		// TODO Auto-generated method stub
-		return 0;
+		Connection con = ConnectionFactory.getConnection();
+		PreparedStatement pstmt = con.prepareStatement(GuestSQL.GUEST_DELETE);
+		pstmt.setInt(1, no);
+		int deleteCount = pstmt.executeUpdate();
+		pstmt.close();
+		ConnectionFactory.releaseConnection(con);
+		return deleteCount;
 	}
 
 }

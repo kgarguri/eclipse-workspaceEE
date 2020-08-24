@@ -17,7 +17,7 @@
 	}
 	GuestService guestService=new GuestService();
 	Guest guest = guestService.selectByNo(Integer.parseInt(guest_noStr));
-	/*
+	
 	if(guest==null){
 		out.println("<script>");
 		out.println("alert('존재하지않는 게시물입니다');");
@@ -25,10 +25,6 @@
 		out.println("</script>");
 		return;
 	}
-	*/
-	
-	
-	
 %>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
