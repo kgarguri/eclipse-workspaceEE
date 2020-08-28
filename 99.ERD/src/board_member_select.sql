@@ -1,0 +1,1 @@
+select * from MEMBER m join board b on m.m_id = b.m_id;
