@@ -21,8 +21,8 @@ public class EncodingFilter implements Filter {
 	 */
 	public void init(FilterConfig filterConfig) throws ServletException {
 		this.encoding = filterConfig.getInitParameter("encoding");
-		//System.out.println("생성직후 단한번호출 init(): encoding parameter-->"
-		//			+ encoding);
+		System.out.println("생성직후 단한번호출 init(): encoding parameter-->"
+					+ encoding);
 	}
 	
 
@@ -34,7 +34,7 @@ public class EncodingFilter implements Filter {
 		ServletResponse response,
 		FilterChain chain)
 		throws IOException, ServletException {
-		//System.out.println("요청시마다 호출 doFilter()");
+		System.out.println("요청시마다 호출 doFilter()");
 
 		if (request.getCharacterEncoding() == null) {
 			if (encoding != null) {
@@ -44,7 +44,7 @@ public class EncodingFilter implements Filter {
 		chain.doFilter(request, response);
 	}
 	public void destroy() {
-		//System.out.println("필터객체가 메모리에서 해지될때호출 destroy()");
+		System.out.println("필터객체가 메모리에서 해지될때호출 destroy()");
 		this.encoding = null;
 	}
 	

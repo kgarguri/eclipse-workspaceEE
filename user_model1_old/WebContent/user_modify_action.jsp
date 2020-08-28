@@ -8,11 +8,14 @@
 		return;
 	}
 	try {
-		request.setCharacterEncoding("UTF-8");
+		//request.setCharacterEncoding("UTF-8");
 		String userId = request.getParameter("userId");
 		String password = request.getParameter("password");
 		String name = request.getParameter("name");
 		String email = request.getParameter("email");
+		
+		//out.println("user_modify_action.jsp");
+
 		User user = new User(userId, password, name, email);
 		UserService userService = new UserService();
 		int updateRowCount = userService.update(user);

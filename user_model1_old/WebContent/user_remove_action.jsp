@@ -18,7 +18,6 @@
 		}else {
 			response.sendRedirect("user_list.jsp");
 		}
-		response.sendRedirect("user_list.jsp");
 	} catch(Exception e) {
 		e.printStackTrace();
 		response.sendRedirect("user_error.jsp");

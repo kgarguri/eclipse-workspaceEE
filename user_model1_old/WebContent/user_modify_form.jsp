@@ -2,7 +2,6 @@
 <%@page import="com.itwill.user.UserService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<--%@ include file = 'login_check.jspf' %>
 <%
 	if(request.getMethod().equalsIgnoreCase("GET")) {
 		response.sendRedirect("user_main.jsp");
@@ -23,7 +22,8 @@
 <script type="text/javascript">
 	function userModify() {
 		
-		out.println("user_modify_form.jsp");
+		alert("user_modify_action.jsp");
+		//out.println("alert('"+e.getMessage()+"');");
 		
 		document.f.action = "user_modify_action.jsp";
 		document.f.method='POST';
@@ -115,9 +115,9 @@
 
 							<table width=590 border=0 cellpadding=0 cellspacing=0>
 								<tr>
-									<td align=center><input type="button" value="수정"
-										onClick="userModify()"> &nbsp; <input type="button"
-										value="목록" onClick="userList()"></td>
+									<td align=center>
+									<input type="button" value="수정"onClick="userModify()"> &nbsp; 
+									<input type="button" value="목록" onClick="userList()"></td>
 								</tr>
 							</table>
 

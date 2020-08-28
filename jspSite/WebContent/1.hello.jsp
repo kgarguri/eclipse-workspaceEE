@@ -7,8 +7,9 @@
 <body>
 <%
 for(int i=0;i<100;i++){
+	out.println(i);
 %>	
-	<h3>Hello JSP[change]</h3>
+	<h3>i Hello JSP[change]</h3>
 	<hr/>
 <%
 }

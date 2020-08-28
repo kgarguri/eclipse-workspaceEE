@@ -89,7 +89,7 @@
 								cellspacing=0>
 								<tr>
 									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>사용자 관리
-											- 사용자 정보보기</b></td>
+											- 사용자정보 정보정보 보기</b></td>
 								</tr>
 							</table> <!-- view Form  -->
 							<form name="f" method="post">

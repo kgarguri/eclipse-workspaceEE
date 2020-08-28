@@ -91,7 +91,7 @@ function userList() {
 											<%=user.getUserId() %>
 										</td>
 										<td width=200 bgcolor="ffffff" style="padding-left: 10">
-											<a href="user_view.jsp?userId=userId"
+											<a href="user_view.jsp?userId=<%=user.getUserId() %>"
 											class="user"><%=user.getName() %></a>
 										</td>
 										<td width=200 align=center bgcolor="ffffff"><%=user.getEmail() %>

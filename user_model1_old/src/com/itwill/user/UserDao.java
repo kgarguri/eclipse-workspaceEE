@@ -104,9 +104,7 @@ public class UserDao  {
 				con.close();
 			}
 		}
-		
-		
-		return 0;
+		return updateRowCount;
 	}
 
 	/*
@@ -123,7 +121,7 @@ public class UserDao  {
 			 */
 			con=dataSource.getConnection();
 			pstmt=con.prepareStatement(UserSQL.USER_REMOVE);
-			pstmt.setString(1, "userId");
+			pstmt.setString(1, userId);
 			deleteRowCount = pstmt.executeUpdate();
 		}finally {
 			/*
@@ -137,7 +135,7 @@ public class UserDao  {
 			}
 		}
 		
-		return 0;
+		return deleteRowCount;
 	}
 	
 	/*
@@ -149,6 +147,9 @@ public class UserDao  {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		User findUser = null;
+		
+		//System.out.println(userId);
+		
 		try {
 			con = dataSource.getConnection();
 			pstmt = con.prepareStatement(UserSQL.USER_SELECT_BY_ID);
@@ -181,8 +182,8 @@ public class UserDao  {
 		ArrayList<User> findList = new ArrayList<User>();
 		try {
 			con= dataSource.getConnection();
-			pstmt = con.prepareStatement(UserSQL.USER_SELECT_BY_ID);
-			pstmt.setString(1, "userId");
+			pstmt = con.prepareStatement(UserSQL.USER_SELECT_ALL);
+			//pstmt.setString(1, "userId");
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				findList.add(new User(rs.getString("userid"),rs.getString("password"),
