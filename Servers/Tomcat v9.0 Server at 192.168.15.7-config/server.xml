@@ -156,7 +156,7 @@
 
       
       
-      <Context docBase="user_model1_old" path="/user_model1_old" reloadable="true" source="org.eclipse.jst.jee.server:user_model1_old"/><Context docBase="user_model1" path="/user_model1" reloadable="true" source="org.eclipse.jst.jee.server:user_model1"/><Context docBase="guest_model1" path="/guest_model1" reloadable="true" source="org.eclipse.jst.jee.server:guest_model1"/><Context docBase="jspSite" path="/jspSite" reloadable="true" source="org.eclipse.jst.jee.server:jspSite"/></Host>
+      <Context docBase="user_model1_old" path="/user_model1_old" reloadable="true" source="org.eclipse.jst.jee.server:user_model1_old"/><Context docBase="user_model1" path="/user_model1" reloadable="true" source="org.eclipse.jst.jee.server:user_model1"/><Context docBase="guest_model1" path="/guest_model1" reloadable="true" source="org.eclipse.jst.jee.server:guest_model1"/><Context docBase="jspSite" path="/jspSite" reloadable="true" source="org.eclipse.jst.jee.server:jspSite"/><Context docBase="shop_cart_db_model1" path="/shop_cart_db_model1" reloadable="true" source="org.eclipse.jst.jee.server:shop_cart_db_model1"/><Context docBase="servletSite" path="/servletSite" reloadable="true" source="org.eclipse.jst.jee.server:servletSite"/></Host>
     </Engine>
   </Service>
 </Server>

@@ -1,36 +1,44 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="com.itwill.user.UserService"%>
 <%@page import="com.itwill.user.User"%>
-<%@page import="java.util.List"%>
-<%@page language="java"
-		contentType="text/html; charset=UTF-8"
-        pageEncoding="UTF-8"
-        %>
-<%--@page language="java"
-		contentType="text/html; charset=UTF-8"
-        pageEncoding="UTF-8"
-        errorPage="user_error.jsp"
-        --%>
-<%@ include file="login_check.jspf" %>  
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+    
 <%
-	UserService userService=new UserService();
-	ArrayList<User> userList=userService.findUserList();
+	String msg1=(String)request.getAttribute("msg1");
+	if(msg1==null)msg1="";
+	String msg2=(String)request.getAttribute("msg2");
+	if(msg2==null)msg2="";
+	User fuser=(User)request.getAttribute("fuser");
+	if(fuser==null)fuser=new User("","","","");
 %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>사용자 관리</title>
-<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <link rel=stylesheet href="css/styles.css" type="text/css">
 <link rel=stylesheet href="css/user.css" type="text/css">
 <script type="text/javascript">
-	function userList() {
-			f.action = "user_write_form.jsp";
-			f.submit();
+	function userCreate() {
+		f.action = "user_write_form.jsp";
+		f.submit();
+	}
+
+	function login() {
+		if (f.userId.value == "") {
+			alert("사용자 아이디를 입력하십시요.");
+			f.userId.focus();
+			return false;
+		}
+		if (f.password.value == "") {
+			alert("비밀번호를 입력하십시요.");
+			f.password.focus();
+			return false;
+		}
+
+		f.action = "user_login_action.jsp";
+		f.submit();
 	}
 </script>
-<style type="text/css" media="screen">
-</style>
 </head>
 <body bgcolor=#FFFFFF text=#000000 leftmargin=0 topmargin=0
 	marginwidth=0 marginheight=0>
@@ -55,6 +63,7 @@
 			<!-- content start -->
 			<!-- include_content.jsp start-->
 			<div id="content">
+
 				<table border=0 cellpadding=0 cellspacing=0>
 					<tr>
 						<td><br />
@@ -62,45 +71,32 @@
 								cellspacing=0>
 								<tr>
 									<td bgcolor="f4f4f4" height="22">&nbsp;&nbsp;<b>사용자 관리
-											- 리스트</b></td>
+											- 로그인</b></td>
 								</tr>
-							</table>
-
+							</table> <!-- login Form  -->
 							<form name="f" method="post">
 								<table border="0" cellpadding="0" cellspacing="1"
 									bgcolor="BBBBBB">
 									<tr>
-										<td align=center bgcolor="E6ECDE" height="22">사용자 아이디</td>
-										<td align=center bgcolor="E6ECDE">이름</td>
-										<td align=center bgcolor="E6ECDE">이메일</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">사용자
+											아이디</td>
+										<td width=490 align="left" bgcolor="ffffff"
+											style="padding-left: 10px"><input type="text"
+											style="width: 150" name="userId" value="<%=fuser.getUserId()%>">&nbsp;&nbsp;<font color="red"><%=msg1%></font></td>
 									</tr>
-									<%
-									for(User user:userList){
-										if(!user.getUserId().equals(sUserId)){	
-									%>
 									<tr>
-										<td width=190 align=center bgcolor="ffffff" height="20">
-											<%=user.getUserId()%>
-										</td>
-										<td width=200 bgcolor="ffffff" style="padding-left: 10">
-											<a href="user_view.jsp?userId=<%=user.getUserId()%>"
-											class="user"><%=user.getName() %></a>
-										</td>
-										<td width=200 align=center bgcolor="ffffff"><%=user.getEmail()%>
-										</td>
+										<td width=100 align=center bgcolor="E6ECDE" height="22">비밀번호</td>
+										<td width=490 align="left" bgcolor="ffffff"
+											style="padding-left: 10px"><input type="password"
+											style="width: 150" name="password" value="<%=fuser.getPassword()%>">&nbsp;&nbsp;<font color="red"><%=msg2%></font></td>
 									</tr>
-									<%
-									    }
-									 }
-									%>
-									
-									
 								</table>
 							</form> <br />
 							<table border="0" cellpadding="0" cellspacing="1">
 								<tr>
-									<td align="right"><!-- input type="button" value="사용자 추가"  onclick="userList();"/-->
-									</td>
+									<td align=center><input type="button" value="로그인"
+										onClick="login();"> &nbsp; <input type="button"
+										value="회원가입" onClick="userCreate()"></td>
 								</tr>
 							</table></td>
 					</tr>
@@ -119,4 +115,3 @@
 	<!--container end-->
 </body>
 </html>
-
