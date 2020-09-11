@@ -8,9 +8,9 @@ public class ProductDaoTestMain {
 		ProductDao productDao = new ProductDao();
 		Product product = new Product();
 		
-		product = productDao.getProduct(1);
+		//product = productDao.getProduct(1);
 		System.out.println("product");
-		System.out.println(product);
+		//System.out.println(product);
 
 	}
 

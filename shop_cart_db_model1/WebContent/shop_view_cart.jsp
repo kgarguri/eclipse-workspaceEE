@@ -7,15 +7,12 @@
 <%@include file="login_check.jspf"%>
 
 <%
-    //String sUserId = "guard1";
+    
 	CartService cartService = new CartService();
 	cartService.getCartItemList(sUserId);
-	//cartService.getCartItemList("guard1");
 
-	//ArrayList<CartItemDto> cartItemDtoList = (ArrayList<CartItemDto>)request.getAttribute("cartItemDtoList");
 	ArrayList<CartItemDto> cartItemList=cartService.getCartItemList(sUserId);
 %>
-
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -28,13 +25,15 @@
 </style>
 <script type="text/javascript">
 	function buy() {
+		//alert('로그인 로그인 로그인 로그인');
 		if (
 		false
 	) {
 			alert('로그인 하세요');
 			location.href = 'user_login_form.jsp';
 		} else {
-			location.href = 'shop_jumun_create_form.jsp';
+			//alert('location.href = shop_jumun_create_form.jsp');
+			location.href = 'shop_jumun_create_form.jsp?buyType=cart';
 		}
 	}
 </script>

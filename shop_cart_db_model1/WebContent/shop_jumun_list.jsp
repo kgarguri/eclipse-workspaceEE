@@ -1,23 +1,14 @@
-<%@page import="com.itwill.shop.jumun.JumunService"%>
-<%@page import="com.itwill.shop.jumun.Jumun" %>
+<%@page import="com.itwill.shop.jumun.Jumun"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import="com.itwill.shop.jumun.JumunService"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<--%@ include file="login_check.jspf" %>
+<%@include file="login_check.jspf" %>    
 <%
-	//if(request.getMethod().equalsIgnoreCase("GET")) {
-//		response.sendRedirect("login_check_jspf");
-		//return;
-	//}
-	
-	out.println("shop_jumun_list.....................");
-
-	JumunService jumunService = new JumunService();
-	ArrayList<Jumun> jumunList = jumunService.getJumunList();
-
+	JumunService jumunService=new JumunService();
+    ArrayList<Jumun> jumunList =jumunService.list(sUserId);
+    
 %>    
-    
-    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -80,28 +71,19 @@
 										<td width=80 height=25 bgcolor=#4682b4 align=center class=t1><font
 											color=#FFFFFF></font></td>
 									</tr>
-									
-									<%
-										for (Jumun jumun:jumunList) {
-									%>
-									
+									<%for(Jumun jumun:jumunList){ %>
 									<!-- jumun item start -->
 									<tr>
-										<td width=145 height=26 align=center class=t1><%=jumun.getJ_no() %></td>
-										<td width=145 height=26 align=center class=t1><%=jumun.getJ_desc() %></td>
-										<td width=112 height=26 align=center class=t1><%=jumun.getJ_date() %>></td>
-										<td width=136 height=26 align=center class=t1><%=jumun.getJ_price() %>></td>
+										<td width=145 height=26 align=center class=t1><%=jumun.getJ_no()%></td>
+										<td width=145 height=26 align=center class=t1><%=jumun.getJ_desc()%></td>
+										<td width=112 height=26 align=center class=t1><%=jumun.getJ_date()%></td>
+										<td width=136 height=26 align=center class=t1><%=jumun.getJ_price()%></td>
 										<td width=80 height=26 align=center class=t1><a
-											href="shop_jumun_detail.jsp?jumun_no=<%=jumun.getJ_no() %>>" class=m1>주문상세</a></td>
+											href="shop_jumun_detail.jsp?j_no=<%=jumun.getJ_no()%>" class=m1>주문상세</a></td>
 									</tr>
-									
 									<!-- jumun item end -->
-
-									<%
-										}
-									%>
+									<%} %>
 									
-									<!-- jumun item end -->
 								</table>
 							</form> <br />
 							<table border="0" cellpadding="0" cellspacing="1" width="590">
@@ -121,7 +103,7 @@
 		<!--wrapper end-->
 		<div id="footer">
 			<!-- include_common_bottom.jsp start-->
-			<jsp:include page="include_common_left.jsp"/>
+			<jsp:include page="include_common_bottom.jsp"/>
 			<!-- include_common_bottom.jsp end-->
 		</div>
 	</div>

@@ -24,10 +24,10 @@
 <h1>SCOPE媛�泥�1</h1>
 
 <ol>
-	<li>page:<%=pageContext.getAttribute("pageSt")%></li>
-	<li>request:<%=request.getAttribute("requestSt")%></li>
-	<li>session:<%=session.getAttribute("sessionSt")%></li>
-	<li>application:<%=application.getAttribute("applicationSt")%></li>
+	<li>page:<%=pageContext.getAttribute("pageStStudent")%></li>
+	<li>request:<%=request.getAttribute("requestStStudent")%></li>
+	<li>session:<%=session.getAttribute("sessionStStudent")%></li>
+	<li>application:<%=application.getAttribute("applicationStStudent")%></li>
 </ol> 
 <br/>
 <a href='8-1.default_scope_page_session_application2.jsp'>8-1.default_scope_page_session_application2.jsp</a><br/>

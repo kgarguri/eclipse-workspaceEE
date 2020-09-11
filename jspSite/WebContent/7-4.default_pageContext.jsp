@@ -9,12 +9,16 @@
 <body>
 <h1>기본객체 pageContext[PageContext]</h1>
 <hr/>
+<p>
+	jso page에 대한 정보를 가지는 객체(JSP 페이지의 기본정보 객체 참조)
+</p>
 <ol>
 	<li><%=pageContext.getRequest()%></li>
 	<li><%=pageContext.getResponse()%></li>
 	<li><%=pageContext.getSession()%></li>
 	<li><%=pageContext.getServletContext()%></li>
 	<li><%=pageContext.getServletConfig()%></li>
+	<li><%=pageContext.getOut()%></li>
 </ol>
 </body>
 </html>

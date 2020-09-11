@@ -7,35 +7,29 @@ import com.itwill.user.User;
 
 public class Jumun {
 	/*
-		이름      널?       유형            
+	이름      널?       유형            
 	------- -------- ------------- 
 	J_NO    NOT NULL NUMBER(10)    
 	J_DESC           VARCHAR2(100) 
 	J_DATE           DATE          
 	J_PRICE          NUMBER(10)    
 	USERID           VARCHAR2(100) 
-
 	 */
 	private int j_no;
 	private String j_desc;
 	private Date j_date;
 	private int j_price;
 	private String userId;
+
 	/*
-	private User user;
-	*/
-	//private ArrayList<JumunDetail> jumunDetailList;
+	 * private User user;
+	 */
+	private ArrayList<JumunDetail> jumunDetailList;
+	
 	
 	public Jumun() {
-		// TODO Auto-generated constructor stub
+		
 	}
-
-	@Override
-	public String toString() {
-		return "Jumun [j_no=" + j_no + ", j_desc=" + j_desc + ", j_date=" + j_date + ", j_price=" + j_price
-				+ ", userId=" + userId + "]";
-	}
-
 	public Jumun(int j_no, String j_desc, Date j_date, int j_price, String userId) {
 		super();
 		this.j_no = j_no;
@@ -43,12 +37,30 @@ public class Jumun {
 		this.j_date = j_date;
 		this.j_price = j_price;
 		this.userId = userId;
+		this.jumunDetailList=new ArrayList<JumunDetail>();
 	}
-
+	
+	public Jumun(int j_no, String j_desc, Date j_date, int j_price, String userId,
+			ArrayList<JumunDetail> jumunDetailList) {
+		super();
+		this.j_no = j_no;
+		this.j_desc = j_desc;
+		this.j_date = j_date;
+		this.j_price = j_price;
+		this.userId = userId;
+		this.jumunDetailList = jumunDetailList;
+	}
+	public ArrayList<JumunDetail> getJumunDetailList() {
+		return jumunDetailList;
+	}
+	public void setJumunDetailList(ArrayList<JumunDetail> jumunDetailList) {
+		this.jumunDetailList = jumunDetailList;
+	}
 	public int getJ_no() {
 		return j_no;
 	}
 
+	
 	public void setJ_no(int j_no) {
 		this.j_no = j_no;
 	}
@@ -84,6 +96,10 @@ public class Jumun {
 	public void setUserId(String userId) {
 		this.userId = userId;
 	}
-	
+	@Override
+	public String toString() {
+		return "Jumun [j_no=" + j_no + ", j_desc=" + j_desc + ", j_date=" + j_date + ", j_price=" + j_price
+				+ ", userId=" + userId + "]";
+	}
 	
 }

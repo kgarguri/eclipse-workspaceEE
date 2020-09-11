@@ -31,7 +31,7 @@
 	
 	GuestService guestService = new GuestService();
 	int inserRowCount = guestService.insertGuest(new Guest(guest_name,guest_email,
-			                                  guest_homepage,guest_title, guest_content));
+			            guest_homepage,guest_title, guest_content));
 	
 	if(inserRowCount != 0) {
 		response.sendRedirect("guest_main.jsp");

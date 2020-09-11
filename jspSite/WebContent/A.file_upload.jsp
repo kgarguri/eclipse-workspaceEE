@@ -131,7 +131,8 @@ a.m2:hover {
 
 					<tr bgcolor=#f4f4f4>
 						<td width=100 align=center class="t1">올린이</td>
-						<td width=400 align=left>&nbsp;<input type=text name=name
+						<td width=400 align=left>&nbsp;
+						<input type=text name=name
 							size=10 maxlength=10 class="TXTFLD">
 						</td>
 					</tr>

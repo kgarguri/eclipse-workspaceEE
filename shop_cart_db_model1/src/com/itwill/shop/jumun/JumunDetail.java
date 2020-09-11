@@ -20,19 +20,15 @@ public class JumunDetail {
 	private int jd_tot_price;
 	private int j_no;
 	private int p_no;
-	/*
+	
 	private Product product;
-	*/
+	
 	public JumunDetail() {
 		// TODO Auto-generated constructor stub
 	}
-	@Override
-	public String toString() {
-		return "JumunDetail [jd_no=" + jd_no + ", jd_qty=" + jd_qty + ", jd_pname=" + jd_pname + ", jd_tot_price="
-				+ jd_tot_price + ", j_no=" + j_no + ", p_no=" + p_no + "]";
-	}
 	
-	public JumunDetail(int jd_no, int jd_qty, String jd_pname, int jd_tot_price, int j_no, int p_no) {
+	
+	public JumunDetail(int jd_no, int jd_qty, String jd_pname, int jd_tot_price, int j_no, int p_no, Product product) {
 		super();
 		this.jd_no = jd_no;
 		this.jd_qty = jd_qty;
@@ -40,6 +36,20 @@ public class JumunDetail {
 		this.jd_tot_price = jd_tot_price;
 		this.j_no = j_no;
 		this.p_no = p_no;
+		this.product = product;
+	}
+
+
+	public Product getProduct() {
+		return product;
+	}
+	public void setProduct(Product product) {
+		this.product = product;
+	}
+	@Override
+	public String toString() {
+		return "JumunDetail [jd_no=" + jd_no + ", jd_qty=" + jd_qty + ", jd_pname=" + jd_pname + ", jd_tot_price="
+				+ jd_tot_price + ", j_no=" + j_no + ", p_no=" + p_no + ", product=" + product + "]";
 	}
 	public int getJd_no() {
 		return jd_no;
@@ -77,8 +87,5 @@ public class JumunDetail {
 	public void setP_no(int p_no) {
 		this.p_no = p_no;
 	}
-	
-	
-	
 	
 }

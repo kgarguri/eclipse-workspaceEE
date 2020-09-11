@@ -1,5 +1,6 @@
 package com.itwill.shop.cart;
 
+import java.io.Console;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,6 +12,7 @@ import javax.sql.DataSource;
 
 import com.itwill.shop.product.Product;
 import com.itwill.user.User;
+import com.sun.media.jfxmedia.logging.Logger;
 
 public class CartDao {
 	private DataSource dataSource;
@@ -102,24 +104,34 @@ public class CartDao {
 	}
 	
 	public  ArrayList<CartItemDto> getCartItemList(String sUserId) throws Exception{
+		
+		System.out.println("dao getCartItemList");
+		
 		ArrayList<CartItemDto> cartItemList= new ArrayList<CartItemDto>();
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		
+		
+		
 		/*
 		select c.p_no,c.cart_qty,c.cart_tot_price ,p.p_name,p.p_image,p.p_price 
 		from cart2 c join user2 u 
 		on c.userid = u.userid join product2 p on c.p_no=p.p_no where u.userid='guard1';
 		 */
-		String selectQuery = "select c.cart_itemno, c.p_no, c.cart_qty, c.cart_tot_price, p.p_name, p.p_image, p.p_price"+
-							 "from cart2 c join user2 u "+
-							 "on c.userid = u.userid join product2 p on c.p_no=p.p_no where u.userid=?";
+		String selectQuery = " select c.cart_itemno cart_itemno, c.p_no p_no, c.cart_qty cart_qty, c.cart_tot_price cart_tot_price, p.p_name p_name, p.p_image p_image, p.p_price "+
+							 " from cart2 c join user2 u "+
+							 " on c.userid = u.userid join product2 p on c.p_no=p.p_no where u.userid=? ";
 		try {
 			con = dataSource.getConnection();
+			
+			
 			pstmt = con.prepareStatement(selectQuery);
 			pstmt.setString(1,sUserId);
 			rs = pstmt.executeQuery();
+		
 			while (rs.next()) {
+
 				cartItemList.add(new CartItemDto(
 						rs.getInt("cart_itemno"),
 						sUserId,

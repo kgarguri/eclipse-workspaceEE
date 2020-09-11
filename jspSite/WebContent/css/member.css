@@ -1,25 +1,28 @@
-@CHARSET "EUC-KR";
-/*
+	/*
+	
+	
+	*/
+	/*
 	class selector
 	*/
-.TXTFLD {
-	border-width: 1px;
-	border-color: blue;
-	border-style: solid;
-	color: blue;
-}
-
-.TXTFLD1 {
-	border-width: 1px;
-	border-color: red;
-	border-style: dotted;
-	color: red;
-}
-
-/*
+	.TXTFLD{
+		border-width: 5px;
+		border-color: blue;
+		color : blue;
+		border-style: dotted;
+		border-radius: 10px;
+	}
+	.TXTFLD1{
+		border-width: 10px;
+		border-color: red;
+		color : red;
+		border-style: dotted;
+		border-radius: 10px;
+	}
+	/*
 	id selector
 	*/
-#jointbl {
-	background-color: orange;
-	border: 2px solid red;
-}
+	#jointbl{
+		background-color: orange;
+		border: 4px dashed red;
+	}

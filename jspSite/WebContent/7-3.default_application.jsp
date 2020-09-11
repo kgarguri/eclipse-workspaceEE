@@ -15,8 +15,20 @@
 <li>major version : <%=application.getMajorVersion()%></li>
 <li>minor version : <%=application.getMinorVersion()%></li>
 <li>context real path : <%=application.getRealPath("")%></li>
-<li>log : <% application.log(">>>>>>>> 현재날짜:"+new Date().toString()); %></li>
-<li>context path(parameter):<%=application.getInitParameter("contextPath")%>
+<li>log : <% application.log(">>>>>>>> 내가 찍은 현재날짜:"+new Date().toString()); %></li>
+<!--  
+<< web.xml >>
+	<context-param>
+	  	<param-name>admin</param-name>
+	  	<param-value>김경호</param-value>
+	  </context-param>
+	  <context-param>
+	  	<param-name>contextPath</param-name>
+	  	<param-value>/jspSite</param-value>
+	  </context-param>
+ -->
+<li>parameter name : contextPath : <%=application.getInitParameter("contextPath")%></li>
+<li>parameter name : admin : <%=application.getInitParameter("admin")%></li>
 </ol>
 </body>
 </html>

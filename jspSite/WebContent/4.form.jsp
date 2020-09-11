@@ -5,6 +5,49 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원 가입</title>
+<link rel="stylesheet" type="text/css" href="css/common.css">
+<link rel="stylesheet" type="text/css" href="css/member.css">
+<style type="text/css">
+	/*
+	tag(html) selector
+	
+	body{
+		background-color: green;
+		color: red;
+	}
+	form {
+		color: purple;
+	}
+	
+	class selector
+	
+	.TXTFLD{
+		border-width: 5px;
+		border-color: blue;
+		color : blue;
+		border-style: dotted;
+		border-radius: 10px;
+	}
+	.TXTFLD1{
+		border-width: 10px;
+		border-color: red;
+		color : red;
+		border-style: dotted;
+		border-radius: 10px;
+	}
+	
+	id selector
+	
+	#jointbl{
+		background-color: orange;
+		border: 4px dashed red;
+	}
+	h3{
+		color: maroon;
+	}
+	*/
+</style>
+
 </head>
 <body>
 	<h3 align="center">◆◆◆ 회원가입 ◆◆◆[<%=request.getRemoteAddr()%>]에서접속</h3>
