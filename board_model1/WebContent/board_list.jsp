@@ -35,9 +35,9 @@ String pageno=request.getParameter("pageno");
 if(pageno==null||pageno.equals("")){
 	pageno="1";
 }	
-//2.한페이지에표시할 게시물수 
+//2.한페이지에 표시할 게시물수 
 int rowCountPerPage = 10;
-//3.한페이지에보여줄 페이지번호갯수(<< 1 2 3 4 5 6 7 8 9 10>>)
+//3.한화면에 보여줄 페이지번호갯수(<< 1 2 3 4 5 6 7 8 9 10>>)
 int pageCountPerPage = 10;
 //페이징(계산)을위한DTO,VO
 PageInputDto pageInputDto=

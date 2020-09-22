@@ -20,6 +20,11 @@
 			f.writer.focus();
 			return false;
 		}
+		if (f.password.value == "") {
+			alert("비밀번호를 입력하십시요.");
+			f.password.focus();
+			return false;
+		}
 		if (f.content.value == "") {
 			alert("내용을 입력하십시요.");
 			f.content.focus();

@@ -4,7 +4,7 @@ public class  ConnectionFactory
 {
 	public static final String ODRIVER="oracle.jdbc.driver.OracleDriver";
 	public static final String URL=
-		"jdbc:oracle:thin:javapython31/javapython31@182.237.126.19:1521:XE";
+		"jdbc:oracle:thin:javapython7/javapython7@182.237.126.19:1521:XE";
 	public ConnectionFactory(){
 		
 	}

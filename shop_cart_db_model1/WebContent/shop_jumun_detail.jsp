@@ -112,7 +112,9 @@ form > table tr td{
 										<td width=290 height=26 align=center class=t1><a href='shop_product_detail.jsp?p_no=<%=jumunDetail.getP_no()%>'><%=jumunDetail.getJd_pname()%></a></td>
 										<td width=112 height=26 align=center class=t1><%=jumunDetail.getJd_qty()%></td>
 										<td width=166 height=26 align=center class=t1><%=jumunDetail.getJd_tot_price()%></td>
-										<td width=50 height=26 align=center class=t1></td>
+										<td width=50 height=26 align=center class=t1>
+										<input type="submit" value="반품/교환/취소">
+										</td>
 									</tr>
 									<%}%>
 									<!-- cart item end -->

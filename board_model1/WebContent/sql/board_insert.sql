@@ -86,12 +86,4 @@ INSERT INTO board(boardno,title,writer,content, groupno, step, depth)
               );
 commit;  
 
-
 select * from board order by groupno desc;
-
-
-
-
-
-
-

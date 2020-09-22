@@ -30,7 +30,9 @@ C.인코딩필터클래스설정  web.xml설정
 			<filter-name>encoding filter</filter-name>
 			<url-pattern>/*</url-pattern>
 		</filter-mapping>
-		
-D. Controller작성(Controller interface implement)
-E. properties파일에설정(mapping)	
-F. *.jsp 작성
+
+
+D. user_controller_mapping.properties 파일생성		
+E. Controller작성(Controller interface implement)
+F. properties파일에설정(mapping)	
+G. *.jsp 작성
