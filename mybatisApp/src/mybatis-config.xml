@@ -32,6 +32,8 @@
 	<mappers>
 		<mapper resource="com/mybatis3/dao/mapper/StudentMapper.xml"/>
 		<mapper resource="com/mybatis3/dao/mapper/CourseMapper.xml"/>
+		<mapper resource="com/mybatis3/dao/mapper/TutorMapper.xml"/>
+		<mapper resource="com/mybatis3/dao/mapper/StudentMapperDynamicSql.xml"/>
 	</mappers>
 </configuration>
 

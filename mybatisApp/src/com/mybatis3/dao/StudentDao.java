@@ -1,7 +1,9 @@
 package com.mybatis3.dao;
 
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
@@ -59,7 +61,13 @@ public class StudentDao {
 		sqlSession.close();
 		return updateRowCount;
 	}
-	/* @@@@@@@@@@@@@@@@@@  insert  @@@@@@@@@@@@@@@*/
+	public int updateStudentParamMap(Map studentMap) {
+		SqlSession sqlSession = sqlSessionFactory.openSession(true);
+		int updateRowCount = sqlSession.update(NAMESPACE+"updateStudentParamMap", studentMap);
+		sqlSession.close();
+		return updateRowCount;
+	}
+		/* @@@@@@@@@@@@@@@@@@  insert  @@@@@@@@@@@@@@@*/
 	/*
 	 <<sqlSessionFactory.openSession(true)>>
 	 
@@ -91,6 +99,37 @@ public class StudentDao {
 		sqlSession.commit();
 		sqlSession.close();
 		return insertRowCount;
+	}
+	/* @@@@@@@@@@@@@@@@@@  select [MAP] @@@@@@@@@@@@@@@*/
+	public HashMap findStudentByIdMap(Integer studId) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		HashMap findStudent = sqlSession.
+				selectOne(NAMESPACE+"findStudentByIdMap",studId);
+		sqlSession.commit();
+		sqlSession.close();
+		return findStudent;
+	}
+	public List<HashMap> findAllStudentsMapList() {
+		SqlSession sqlSession=sqlSessionFactory.openSession();
+		List<HashMap> studentMapList = sqlSession.
+				selectList(NAMESPACE+"findAllStudentsMapList");
+		sqlSession.close();
+		return studentMapList;
+		
+		
+	}
+	/* @@@@@@@@@@@@@@@@@@  select [ETC] @@@@@@@@@@@@@@@*/
+	public List<String> findStudentNameList() {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<String> nameList = sqlSession.selectList(NAMESPACE+"findStudentNameList");
+		sqlSession.close();
+		return nameList;
+	}
+	public String findStudentNameById(Integer studId) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		String name = sqlSession.selectOne(NAMESPACE+"findStudentNameById", studId);
+		sqlSession.close();
+		return name;
 	}
 	
 	/* @@@@@@@@@@@@@@@@@@  select [join] @@@@@@@@@@@@@@@*/
@@ -157,10 +196,23 @@ public class StudentDao {
 				selectList(NAMESPACE+"findAllStudents");
 		sqlSession.close();
 		return studentList;
-		
-		
 	}
-
+	public List<Student> findStudentByIdRangeParamMap(Map rangeMap) {
+		SqlSession sqlSession=sqlSessionFactory.openSession();
+		List<Student> studentList = sqlSession.
+				selectList(NAMESPACE+"findStudentByIdRangeParamMap", rangeMap);
+		sqlSession.close();
+		return studentList;
+	}
+	public List<Student> findStudentByIdThreeParamMap(Map threeMap) {
+		SqlSession sqlSession=sqlSessionFactory.openSession();
+		List<Student> studentList = sqlSession.
+				selectList(NAMESPACE+"findStudentByIdThreeParamMap", threeMap);
+		sqlSession.close();
+		return studentList;
+	}
+	
+	
 }
 
 

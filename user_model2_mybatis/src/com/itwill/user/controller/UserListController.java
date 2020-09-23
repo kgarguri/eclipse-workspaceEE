@@ -1,6 +1,7 @@
 package com.itwill.user.controller;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +17,7 @@ public class UserListController implements Controller {
 		String forwardPath="";
 		try {
 			UserService userService = new UserService();
-			ArrayList<User> userList = userService.findUserList();
+			List<User> userList = userService.findUserList();
 			request.setAttribute("userList", userList);
 			forwardPath="forward:/WEB-INF/views/user_list.jsp";
 		} catch (Exception e) {

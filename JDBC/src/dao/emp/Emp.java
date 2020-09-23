@@ -12,4 +12,7 @@ COMM              NUMBER(7,2)
 DEPTNO            NUMBER(2)  
  */
 public class Emp {
+	
+	
+	
 }

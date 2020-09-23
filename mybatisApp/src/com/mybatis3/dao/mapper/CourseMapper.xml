@@ -5,14 +5,14 @@
 	<resultMap id="courseWithStudentsResultMap" 
 			   type="com.mybatis3.domain.Course" autoMapping="true" >
 			   <result column="course_id" property="courseId"/>
+			   <result column="start_date" property="startDate"/>
+			   <result column="end_date" property="endDate"/>
 			   <collection property="students" 
 			               autoMapping="true"
 			               resultMap="com.mybatis3.dao.mapper.StudentMapper.studentResultMap">
 			   </collection>
-	
 	</resultMap>
-	
-	
+
 	<!-- @@@@@@@@@@@@@@@@@@@@@ SELECT[JOIN] @@@@@@@@@@@@@@@@@@@@@@@ -->
 	<!-- resultMap: [ courses + students 조인 ]-->
 	<select id="findCourseByIdWithStudents" 

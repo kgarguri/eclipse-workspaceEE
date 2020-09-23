@@ -7,8 +7,7 @@ select stud_id, name, email,phone, a.addr_id, street, city, state, zip, country
   		FROM students s 
       left outer join addresses a 
       on s.addr_id=a.addr_id;
-     
-     
+       
 select stud_id, name, email,phone, a.addr_id, street, city, state, zip, country
   		FROM students s 
       right outer join addresses a 
@@ -38,22 +37,22 @@ select  s.stud_id,s.name  ,s.email,s.phone,s.dob ,
 		on s.stud_id = ce.stud_id
 		join courses c
 		on ce.course_id=c.course_id where s.stud_id=1;
-
-
+/*
+* tutors + courses join
+*/
 SELECT t.tutor_id, t.name as tutor_name, email,course_id, c.name, description, start_date, end_date
       FROM tutors t 
-      inner join courses c 
+      join courses c 
       on t.tutor_id=c.tutor_id; 
-      
+/*
+* tutors + courses outer join
+*/      
       
 SELECT t.tutor_id, t.name as tutor_name, email,course_id, c.name, description, start_date, end_date
       FROM tutors t 
       left outer join courses c 
       on t.tutor_id=c.tutor_id;
-      
-      
-      
-           
+        
 SELECT t.tutor_id, t.name as tutor_name, email,course_id, c.name, description, start_date, end_date
       FROM tutors t 
       left outer join courses c 
@@ -67,7 +66,6 @@ SELECT t.tutor_id, t.name as tutor_name, email, a.addr_id, street, city, state, 
       on t.addr_id=a.addr_id
 	  left outer join courses c on t.tutor_id=c.tutor_id
       where t.tutor_id=1;   
-      
       
 -- Courses검색      
 SELECT * FROM COURSES
