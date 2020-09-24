@@ -30,9 +30,21 @@ public class StudentDaoDynamicSql {
 		List<Student> findStudentList = sqlSession.selectList(NAMESPACE+"findStudents", findStudent);
 		sqlSession.close();
 		return findStudentList;
-		
 	}
-	
+	public int updateStudentById(Student updateStudent) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		int updateRowCount = sqlSession.update(NAMESPACE+"updateStudentById", updateStudent);
+		sqlSession.commit();
+		sqlSession.close();
+		return updateRowCount;
+	}
+	public List<Student> findStudentsOrderList(String columnName) {
+		SqlSession sqlSession = sqlSessionFactory.openSession();
+		List<Student> findStudentOrderList = sqlSession.selectList(NAMESPACE+"findStudentsOrderList", columnName);
+		//sqlSession.commit();
+		sqlSession.close();
+		return findStudentOrderList;
+	}
 }
 
 

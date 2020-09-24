@@ -1,3 +1,7 @@
+select name from student;
+select name from student where stud_id = 1;
+
+
 select stud_id, name, email,phone, a.addr_id, street, city, state, zip, country
   		FROM students s 
       inner join addresses a 
@@ -58,7 +62,9 @@ SELECT t.tutor_id, t.name as tutor_name, email,course_id, c.name, description, s
       left outer join courses c 
       on t.tutor_id=c.tutor_id
       where t.tutor_id=1;  
-      
+ /*
+* tutors + addresses + courses outer join
+*/     
 SELECT t.tutor_id, t.name as tutor_name, email, a.addr_id, street, city, state, zip, country,
        			course_id, c.name, description, start_date, end_date
       FROM tutors t 
